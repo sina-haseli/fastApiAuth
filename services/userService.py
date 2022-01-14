@@ -8,5 +8,5 @@ class UserService:
         self.UserRep = UserRepository()
         super(UserRepository).__init__()
 
-    async def find_one(self, user_id: int, db: Session):
+    def find_one(self, user_id: int, db: Session):
         return self.UserRep.findAll(user_id, db)

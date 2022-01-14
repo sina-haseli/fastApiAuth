@@ -4,6 +4,5 @@ from models import dbmodels
 
 
 class UserRepository:
-
-    async def findAll(self, user_id: int, db: Session):
+    def findAll(self, user_id: int, db: Session):
         return db.query(dbmodels.User).filter(dbmodels.User.id == user_id).first()

@@ -9,5 +9,5 @@ route = APIRouter()
 
 
 @route.get("/{user_id}")
-async def get_user(user_id: int, db: Session = Depends(get_db), userService: UserService = Depends(UserService)):
-    return userService.find_one(user_id, db)
+def get_user(user_id: int, db: Session = Depends(get_db), userService: UserService = Depends(UserService)):
+    return UserService.find_one(userService, user_id, db)
